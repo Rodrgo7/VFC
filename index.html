@@ -5,12 +5,6 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Sorteio de Times</title>
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#0f172a">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Pelada das Várzeas">
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <!-- ============================================================
@@ -123,7 +117,9 @@
 .unified-tab.active{background:#22c55e;color:#052e16}
 .unified-panel{display:none}.unified-panel.active{display:block}
 @media(min-width:700px){.unified-tabs{grid-template-columns:repeat(6,1fr)}}
-</style></head>
+</style><link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0056b3">
+</head>
 <body class="bg-slate-900 text-white p-4 font-sans pb-12">
 <div id="status-firebase" style="position:fixed;right:10px;bottom:10px;z-index:9999;font-size:11px;opacity:.75;display:none"></div>
 <div class="max-w-md mx-auto">
@@ -1318,13 +1314,7 @@
         document.getElementById('filtro-mes-fim').value = 'Dezembro';
         atualizarTudo();
     </script><script>
-    // PWA: registra o Service Worker sem interferir nas funções do aplicativo.
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('./sw.js', { scope: './' })
-                .then(reg => console.log('PWA/Service Worker ativo:', reg.scope))
-                .catch(err => console.warn('PWA: Service Worker não registrado:', err));
-        });
-    }
-</script></body>
+if ('serviceWorker' in navigator) { window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(console.error)); }
+</script>
+</body>
 </html>
